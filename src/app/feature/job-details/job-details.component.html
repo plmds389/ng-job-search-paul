@@ -1,0 +1,25 @@
+<button routerLink="/jobs" (click)="onBack()" class="job-button">Back</button><br />
+<ng-container *ngIf="jobDetails">
+    <div class="header">
+        <img src="{{jobDetails.companyLogo}}">&nbsp;&nbsp;
+        <div class="job-title">
+            {{jobDetails.companyName}} -
+            {{jobDetails.title}}
+        </div>
+        <div class="badges">
+            <span class="badge" [innerHTML]="jobDetails.types"></span>
+            <span class="badge" [innerHTML]="jobDetails.industries"></span>
+        </div>
+    </div>
+
+    <div class="metadata">
+        <p><strong>Publish date:</strong> {{jobDetails.publishDate | date: 'shortDate'}}</p>
+        <p><strong>Location:</strong> {{jobDetails.location}}</p>
+        <p><strong>Reference:</strong> {{jobDetails.reference}}</p>
+    </div>
+
+    <div class="description">
+        <p><strong>Description:</strong></p>
+        <div [innerHTML]="jobDetails.description"></div>
+    </div>
+</ng-container>

@@ -1,0 +1,47 @@
+.parent-wrapper {
+    margin-bottom: 36px;
+}
+
+img {
+    max-width: 13% !important;
+}
+
+.active {
+    color: yellow;
+}
+
+.parent {
+    display: flex;
+    font-size: 0;
+    flex-wrap: wrap;
+    margin: -10px 0 0 -10px;
+}
+
+.child {
+    display: inline-block;
+    margin: 10px 0 0 10px;
+    flex-grow: 1;
+    height: 48px;
+    width: calc(100% * (1/4) - 10px - 1px);
+}
+
+.child.child-link {
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+.child-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.star-link:hover {
+    cursor: pointer;
+    color: yellow;
+    background-color: yellow;
+}
+
+.child.child-ref {
+    font-family: sans-serif;
+    font-size: 12px;
+}

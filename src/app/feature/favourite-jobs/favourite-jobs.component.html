@@ -1,0 +1,22 @@
+<h3 *ngIf="!isAnyJobFavourite()" style="text-align: center;">No favourite job(s) found!</h3>
+<ng-container *ngIf="jobList.length > 0">
+    <div *ngFor="let job of jobList">
+        <ng-container *ngIf="isJobFav(job)">
+            <div class="parent-wrapper">
+                <div class="parent">
+                    <div class="child"><img src="{{job?.companyLogo}}"></div>
+                    <div class="child child-link" (click)="getJobDetails(job)">{{job?.title}}</div>
+                    <div class="child"></div>
+                </div>
+                <div class="parent">
+                    <div class="child"></div>
+                    <div class="child child-ref">
+                        Company: <span>{{job?.companyName}}</span>
+                        Reference: <span>{{job?.reference}}</span>
+                    </div>
+                    <div class="child"></div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</ng-container>

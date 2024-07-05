@@ -1,0 +1,21 @@
+<div *ngFor="let job of jobList">
+    <div class="parent-wrapper">
+        <div class="parent">
+            <div class="child"><img src="{{job?.companyLogo}}"></div>
+            <div class="child child-link" (click)="getJobDetails(job)">{{job?.title}}</div>
+            <div class="child">
+                <span class="icon-star star-link" id="star-{job.id}" [class.active]="isJobFav(job)"
+                    (click)="onFavouriteSelected(job)"></span>
+            </div>
+        </div>
+        <div class="parent">
+            <div class="child"></div>
+            <div class="child child-ref">
+                Company: <span>{{job?.companyName}}</span>
+                Reference: <span>{{job?.reference}}</span>
+            </div>
+            <div class="child"></div>
+        </div>
+    </div>
+
+</div>
